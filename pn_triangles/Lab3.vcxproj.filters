@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{41d0330b-0448-4321-abc2-24d86767b9ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mvk">
+      <UniqueIdentifier>{d5e06d69-3006-4049-86d1-20577c589fca}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mvk\buffer.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\camera.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\commands.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\context.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\debug.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\device.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\device_memory.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\gpu.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\image.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\instance.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\pipelines.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\queue.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\staging.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\surface.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\swapchain.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\utils.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="mvk\vk_mem_alloc.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="render_pass.h">
+      <Filter>Header Files\mvk</Filter>
+    </ClInclude>
+    <ClInclude Include="pn_triangle_app.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_context.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uniform_alloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tiny_obj_loader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sync.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\base.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\base.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\pn.tesc">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\pn.tese">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\pn.vert">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

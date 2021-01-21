@@ -1,0 +1,1 @@
+for /r %%v in (*.vert, *.frag, *.tesc, *.tese) do glslc %%v -o %%v.spv

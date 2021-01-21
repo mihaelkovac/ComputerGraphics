@@ -1,0 +1,80 @@
+#version 450
+#extension GL_ARB_separate_shader_objects : enable
+
+
+#define ATTRAC_DAMP 0.04
+#define REPULS_DAMP 0.00004
+
+struct Particle
+{
+	vec2 pos;
+	vec3 color;
+	vec2 vel;
+    vec3 colorChange;
+};
+
+layout(binding = 0) uniform UBO
+{
+	float deltaT;
+	float destX;
+	float destY;
+	int particleCount;
+} ubo;
+
+layout(local_size_x = 256) in;
+
+layout(binding = 1) buffer Pos
+{
+    Particle particles[ ];
+};
+
+
+vec2 calcAttraction(vec2 pos, vec2 targetPos)
+{
+	vec2 delta = pos - targetPos;
+	float dampedDot = dot(delta, delta) + 0.2;
+	float invDist = 1.0f / sqrt(dampedDot);
+    float invDistCubed = invDist * invDist * invDist;
+    return delta * invDistCubed * ATTRAC_DAMP;
+}
+
+vec2 calcRepulsion(vec2 pos, vec2 targetPos)
+{
+    vec2 delta = targetPos - pos;
+    float dist = sqrt(dot(delta, delta) + 0.2);
+    return delta * (1.0 / (dist * dist * dist)) * (-REPULS_DAMP);
+}
+
+void main()
+{
+    uint index = gl_GlobalInvocationID.x;
+
+    if(index >= ubo.particleCount)
+    {
+        return;
+    }
+
+    vec2 vel = particles[index].vel.xy;
+    vec2 pos = particles[index].pos.xy;
+
+    vec2 dest = vec2(ubo.destX, ubo.destY);
+
+    vec2 delta = dest - pos;
+    float dist = sqrt(dot(delta, delta));
+    vel += calcRepulsion(pos, dest.xy) * 0.05;
+
+    pos += vel * ubo.deltaT;
+
+    float outOfBounds = float(pos.x < -1.0 || pos.x > 1.0 || pos.y < -1.0 || pos.y > 1.0);
+    vel = outOfBounds * ((-vel * 0.1) + calcAttraction(pos, dest) * 10);
+    particles[index].pos.xy = (1.0 - outOfBounds) * pos;
+
+
+    particles[index].color = 0.02 * ubo.deltaT * particles[index].colorChange;
+    vec3 color = particles[index].color.xyz;
+    particles[index].color -= vec3(float(color.x > 1.0), float(color.y > 1.0), float(color.z > 1.0));
+
+    particles[index].vel.xy = vel;
+
+	
+}
