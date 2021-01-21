@@ -132,7 +132,7 @@
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>D:/FER/diplomski/3.semestar/RG/labosi/lab3/Lab3/shaders/compile_shaders.bat</Command>
+      <Command>$(SolutionDir)shaders\compile_shaders.bat</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Build Shaders</Message>
@@ -159,7 +159,7 @@
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>D:/FER/diplomski/3.semestar/RG/labosi/lab3/Lab3/shaders/compile_shaders.bat</Command>
+      <Command>$(SolutionDir)shaders\compile_shaders.bat</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Build Shaders</Message>

@@ -108,7 +108,6 @@ private:
 
 	std::vector<Vertex> vertices_{};
 	std::vector<uint32_t> indices_{};
-	bool model_rotating_{ false };
 
 	struct UniformTes
 	{
@@ -300,20 +299,6 @@ void PNTriangleApp::InitWindow(int width, int height) noexcept
 	});
 
 	
-	glfwSetMouseButtonCallback(window_, [](GLFWwindow* window, int button, int action, int mods)
-	{
-		auto* app = static_cast<PNTriangleApp*>(glfwGetWindowUserPointer(window));
-
-		if(button == GLFW_MOUSE_BUTTON_LEFT)
-		{
-			app->model_rotating_ = action != GLFW_RELEASE;
-		}
-	});
-	
-	glfwSetCursorPosCallback(window_, [](GLFWwindow* window, double x, double y)
-	{
-
-	});
 }
 
 void PNTriangleApp::InitRenderPass() noexcept
